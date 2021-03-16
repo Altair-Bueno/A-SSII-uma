@@ -7,12 +7,16 @@ public class Malla {
     private final static int END = 2;
     private final static int WALL = 3;
     private final static char [] alphabet = {'_','S','E','X'};
+    private int obs;
+    private int [][] malla;
+    private Random seed;
 
-    Random seed;
-    int [][] malla;
 
-    public Malla (long seed, int filas , int columnas , int nObstaculos) {
-
+    public Malla (long s, int f , int c , int nObstaculos) {
+        seed = new Random();
+        seed.setSeed(s);
+        malla = new int[f][c];
+        obs = nObstaculos;
     }
 
     public String ver() {
