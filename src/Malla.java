@@ -42,8 +42,37 @@ public class Malla {
         generarMalla();
     }
 
+    /**
+     * Genera la malla a partir de los datos especificados. El inicio y el
+     * final se generan de manera aleatoria lo primero, y luego se generan
+     * los obstáculos con un bucle while que ponga tantos obstáculos
+     * como se hayan pedido.
+     */
+
     private void generarMalla() {
-        // TODO
+        int f, c;
+        int n = obs;
+
+        f = seed.nextInt(filas);
+        c = seed.nextInt(columnas);
+        malla[f][c] = 1;
+
+        while(malla[f][c] != 0){
+            f = seed.nextInt(filas);
+            c = seed.nextInt(columnas);
+        }
+        malla[f][c] = 2;
+
+
+        while (n > 0){
+            f = seed.nextInt(filas);
+            c = seed.nextInt(columnas);
+
+            if(malla[f][c] == 0){
+                malla[f][c] = 3;
+                n--;
+            }
+        }
     }
 
     /**
