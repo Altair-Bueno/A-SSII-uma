@@ -18,9 +18,9 @@ public class Malla {
      * Si dos constructores reciben los mismos parámetros, la malla generada
      * es igual en ambas instancias
      *
-     * @param seed semilla del generador
-     * @param filas nº filas de la malla
-     * @param columnas nº columnas de la malla
+     * @param s semilla del generador
+     * @param f nº filas de la malla
+     * @param c nº columnas de la malla
      * @param nObstaculos nº obstaculos presentes dentro de la malla
      */
     
