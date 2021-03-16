@@ -7,10 +7,11 @@ public class Malla {
     private final static int END = 2;
     private final static int WALL = 3;
     private final static char [] alphabet = {'_','S','E','X'};
+
     Random seed;
     int [][] malla;
 
-    public Malla (int seed, int filas , int columnas , int nObstaculos) {
+    public Malla (long seed, int filas , int columnas , int nObstaculos) {
 
     }
 
