@@ -12,10 +12,26 @@ public class Malla {
     Random seed;
     int [][] malla;
 
+    /**
+     * Representa una malla 4-vecinos con obstaculos. Cada casilla contiene
+     * un valor que representa el tipo de objeto {EMPTY, START, END, WALL}.
+     * Si dos constructores reciben los mismos parámetros, la malla generada
+     * es igual en ambas instancias
+     *
+     * @param seed semilla del generador
+     * @param filas nº filas de la malla
+     * @param columnas nº columnas de la malla
+     * @param nObstaculos nº obstaculos presentes dentro de la malla
+     */
     public Malla (long seed, int filas , int columnas , int nObstaculos) {
 
     }
 
+    /**
+     * Devuelve la representación de la malla 4-vecinos almacenada
+     * en esta instancia de la clase
+     * @return representación malla 4-vecinos
+     */
     public String ver() {
         StringBuilder stringBuilder = new StringBuilder();
 
