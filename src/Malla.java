@@ -55,21 +55,21 @@ public class Malla {
 
         f = seed.nextInt(filas);
         c = seed.nextInt(columnas);
-        malla[f][c] = 1;
+        malla[f][c] = START;
 
-        while(malla[f][c] != 0){
+        while(malla[f][c] != EMPTY){
             f = seed.nextInt(filas);
             c = seed.nextInt(columnas);
         }
-        malla[f][c] = 2;
+        malla[f][c] = END;
 
 
         while (n > 0){
             f = seed.nextInt(filas);
             c = seed.nextInt(columnas);
 
-            if(malla[f][c] == 0){
-                malla[f][c] = 3;
+            if(malla[f][c] == EMPTY){
+                malla[f][c] = WALL;
                 n--;
             }
         }
