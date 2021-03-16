@@ -17,6 +17,11 @@ public class Malla {
         seed.setSeed(s);
         malla = new int[f][c];
         obs = nObstaculos;
+        generarMalla();
+    }
+
+    private void generarMalla(){
+
     }
 
     public String ver() {
