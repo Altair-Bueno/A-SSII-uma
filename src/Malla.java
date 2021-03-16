@@ -22,14 +22,14 @@ public class Malla {
      * es igual en ambas instancias
      *
      * @param s           semilla del generador
-     * @param f           nº filas de la malla
-     * @param c           nº columnas de la malla
-     * @param nObstaculos nº obstaculos presentes dentro de la malla
-     * @throws IllegalArgumentException if (f <= 0 || c <= 0 || nObstaculos < 0)
+     * @param f           nº filas de la malla. Mayor que 0
+     * @param c           nº columnas de la malla. Mayor que 0
+     * @param nObstaculos nº obstaculos presentes dentro de la malla. Menor que el numero de casillas (f*c -2 <nObstaculos)
+     * @throws IllegalArgumentException if (f <= 0 || c <= 0 || nObstaculos < 0 || f*c -2 <nObstaculos)
      */
 
     public Malla(long s, int f, int c, int nObstaculos) {
-        if (f <= 0 || c <= 0 || nObstaculos < 0)
+        if (f <= 0 || c <= 0 || nObstaculos < 0 || f*c -2 <nObstaculos)
             throw new IllegalArgumentException("Cannot build Malla class with args" +
                     s + " " + f + " " + c + " " + nObstaculos);
 
