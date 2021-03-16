@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.Random;
+import java.util.StringJoiner;
 
 public class Malla {
     private final static int EMPTY = 0;
@@ -16,7 +17,17 @@ public class Malla {
     }
 
     public String ver() {
-        return null;
+        StringBuilder stringBuilder = new StringBuilder();
+
+        for (int i = 0 ; i< malla.length ; i++) {
+            for (int u = 0 ; u<malla[0].length ; u++) {
+                stringBuilder.append(alphabet[malla[i][u]]);
+                stringBuilder.append(" ");
+            }
+            stringBuilder.append("\n");
+        }
+
+        return stringBuilder.toString();
     }
 
     public int[][] getMalla() {
