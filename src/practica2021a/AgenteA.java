@@ -1,4 +1,4 @@
-Ppackage practica2021a;
+package practica2021a;
 
 import java.util.ArrayList;
 import java.util.Collections;
