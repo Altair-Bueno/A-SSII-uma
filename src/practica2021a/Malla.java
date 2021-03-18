@@ -2,6 +2,13 @@ package practica2021a;
 
 import java.util.Random;
 
+/**
+ * Representa una malla 4-vecinos con obstaculos. Cada casilla contiene
+ * un valor que representa el tipo de objeto {EMPTY, START, END, WALL}.
+ * Si dos constructores reciben los mismos parámetros, la malla generada
+ * es igual en ambas instancias
+ */
+
 public class Malla {
 
     public final static int EMPTY = 0;
