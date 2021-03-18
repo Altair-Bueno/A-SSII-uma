@@ -16,13 +16,10 @@ public class EstadoMalla implements Estado {
 
     Malla malla;
 
-    final int[][] matrizObstaculos;
-
     public EstadoMalla(int fila, int columna, Malla malla) {
         this.fila = fila;
         this.columna = columna;
         this.malla = malla;
-        matrizObstaculos = malla.getMalla();
     }
 
     @Override
