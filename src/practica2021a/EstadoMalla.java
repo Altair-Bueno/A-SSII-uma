@@ -14,12 +14,15 @@ public class EstadoMalla implements Estado {
     int fila;
     int columna;
 
+    Malla malla;
+
     final int[][] matrizObstaculos;
 
-    public EstadoMalla(int fila, int columna, int[][] matrizObstaculos) {
+    public EstadoMalla(int fila, int columna, Malla malla) {
         this.fila = fila;
         this.columna = columna;
-        this.matrizObstaculos = matrizObstaculos;
+        this.malla = malla;
+        matrizObstaculos = malla.getMalla();
     }
 
     @Override
@@ -47,7 +50,8 @@ public class EstadoMalla implements Estado {
 
     @Override
     public int h(Estado objetivo) {
-        return 0;
+        //int distanciaManhattan = (this.fila - objetivo) + ()
+        return 0;//distanciaManhattan;
     }
 
     @Override
