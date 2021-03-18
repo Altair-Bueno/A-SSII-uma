@@ -41,25 +41,25 @@ public class EstadoMalla implements Estado {
         int[][] m = malla.getMalla();
 
         if(this.columna - 1 >= 0){ //Vecino izquierdo
-            if(m[this.fila][this.columna-1] == 0){ //¿Está libre?
+            if(m[this.fila][this.columna-1] != Malla.WALL){
                 sucs.add(new EstadoMalla(this.fila,this.columna-1,malla));
             }
         }
 
         if(this.fila-1 >= 0){ //Vecino arriba
-            if(m[this.fila-1][this.columna] == 0){ //¿Está libre?
+            if(m[this.fila-1][this.columna] != Malla.WALL){
                 sucs.add(new EstadoMalla(this.fila-1,this.columna,malla));
             }
         }
 
         if(this.columna + 1 < malla.getColumnas()){ //Vecino derecho
-           if(m[this.fila][this.columna+1] == 0){ //¿Está libre?
+           if(m[this.fila][this.columna+1] != Malla.WALL){
                sucs.add(new EstadoMalla(this.fila,this.columna+1,malla));
            }
         }
 
         if(this.fila+1 < malla.getFilas()){ //Vecino abajo
-            if(m[this.fila+1][this.columna] == 0){ //¿Está libre?
+            if(m[this.fila+1][this.columna] != Malla.WALL){
                 sucs.add(new EstadoMalla(this.fila+1,this.columna,malla));
             }
         }
@@ -67,11 +67,24 @@ public class EstadoMalla implements Estado {
         return sucs;
     }
 
+    /**
+     * Devuelve el coste del arco entre el nodo actual y el nodo que
+     * recibe como parámetro
+     * @param e2 nodo contiguo
+     * @return coste(this,e2)
+     */
     @Override
     public int coste(Estado e2) {
         return 1;
     }
 
+    /**
+     * Calcula la distancia Manhattan del algoritmo A* utilizando el estado actual y el
+     * estado objetivo que recibe como parámetro
+     * @param objetivo estado objetivo para calcular distancia Manhattan
+     * @return Distancia Manhattan
+     * @throws IllegalArgumentException !(objetivo instanceof EstadoMalla)
+     */
     @Override
     public int h(Estado objetivo) {
         if (objetivo instanceof EstadoMalla) {
@@ -82,14 +95,22 @@ public class EstadoMalla implements Estado {
         }
     }
 
+    /**
+     * Muestra por pantalla el estado actual con el formato
+     * (this.fila,this.columna)
+     */
+
     @Override
     public void ver() {
         System.out.println(this.toString());
     }
 
+    /**
+     * @return (this.fila,this.columna)
+     */
     @Override
     public String toString() {
-        return "Fila: " + this.fila + ", Columna: " + this.columna;
+        return "(" + this.fila + "," + this.columna + ")";
     }
 
     public int getFila() {

@@ -101,7 +101,7 @@ public class Malla {
     }
 
     /**
-     * Devuelve la representación de la malla 4-vecinos almacenada
+     * Muestra la representación de la malla 4-vecinos almacenada
      * en esta instancia de la clase usando la siguiente leyenda:
      * <ul>
      * <li>'_' := Vacío</li>
@@ -110,7 +110,6 @@ public class Malla {
      * <li>'E' := Fin (End)</li>
      * </ul>
      *
-     * @return representación malla 4-vecinos
      */
     public void ver() {
         System.out.println(toString());
@@ -128,6 +127,18 @@ public class Malla {
         return estadoInicial;
     }
 
+    /**
+     * Devuelve la representación de la malla 4-vecinos almacenada
+     * en esta instancia de la clase usando la siguiente leyenda:
+     * <ul>
+     * <li>'_' := Vacío</li>
+     * <li>'X' := Muro</li>
+     * <li>'S' := Inicio (Start)</li>
+     * <li>'E' := Fin (End)</li>
+     * </ul>
+     *
+     * @return representación malla 4-vecinos
+     */
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
