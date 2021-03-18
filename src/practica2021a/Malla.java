@@ -105,18 +105,8 @@ public class Malla {
      *
      * @return representación malla 4-vecinos
      */
-    public String ver() {
-        StringBuilder stringBuilder = new StringBuilder();
-
-        for (int i = 0; i < filas; i++) {
-            for (int u = 0; u < columnas; u++) {
-                stringBuilder.append(alphabet[malla[i][u]]);
-                stringBuilder.append(" ");
-            }
-            stringBuilder.append("\n");
-        }
-
-        return stringBuilder.toString();
+    public void ver() {
+        System.out.println(toString());
     }
 
     public int[][] getMalla() {
