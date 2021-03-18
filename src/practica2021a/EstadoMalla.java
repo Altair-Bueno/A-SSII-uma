@@ -2,17 +2,32 @@ package practica2021a;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
- * @author L.Mandow 
- * @date  2021-03-11
- * 
- * Plantilla para representar los estados de la práctica
+ *
+ * empty;
  *
  */
 
 public class EstadoMalla implements Estado {
+    int fila;
+    int columna;
 
+    static int[][] matrizObstaculos;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        EstadoMalla that = (EstadoMalla) o;
+        return fila == that.fila && columna == that.columna;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(fila, columna);
+    }
 
     @Override
     public List<? extends Estado> calculaSucesores() {

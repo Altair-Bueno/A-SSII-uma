@@ -18,8 +18,9 @@ public class AgenteA{
 	 * Resuelve un problema dado el estado inicial y el objetivo.
 	 * 
 	 */
+	/*
 	public List<Estado> resuelve(Estado salida, Estado objetivo){
-		
+
 		Arbol<Estado> arbol = new ArbolL<Estado>();
 		Abiertos<Estado> abiertos = new AbiertosL<Estado>();
 
@@ -72,5 +73,8 @@ public class AgenteA{
 		}//while
 		
 		return solucion;
+
 	}
+
+	 */
 }
