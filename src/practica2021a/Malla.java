@@ -11,11 +11,15 @@ public class Malla {
     private final static char[] alphabet = {'_', 'S', 'E', 'X'};
 
 
+
     private final int obs;
     private final int filas;
     private final int columnas;
     private final int[][] malla;
     private final Random seed;
+
+    private EstadoMalla estadoFinal;
+    private EstadoMalla estadoInicial;
 
     /**
      * Representa una malla 4-vecinos con obstaculos. Cada casilla contiene
@@ -29,6 +33,8 @@ public class Malla {
      * @param nObstaculos nº obstaculos presentes dentro de la malla. Menor que el numero de casillas (f*c -2 <nObstaculos)
      * @throws IllegalArgumentException if (f <= 0 || c <= 0 || nObstaculos < 0 || f*c -2 <nObstaculos)
      */
+
+
 
     public Malla(long s, int f, int c, int nObstaculos) {
         if (f <= 0 || c <= 0 || nObstaculos < 0 || f*c -2 <nObstaculos)
@@ -58,12 +64,14 @@ public class Malla {
         f = seed.nextInt(filas);
         c = seed.nextInt(columnas);
         malla[f][c] = START;
+        estadoInicial = new EstadoMalla(f,c,this);
 
         while(malla[f][c] != EMPTY){
             f = seed.nextInt(filas);
             c = seed.nextInt(columnas);
         }
         malla[f][c] = END;
+        estadoFinal = new EstadoMalla(f,c,this);
 
 
         while (n > 0){
@@ -107,8 +115,26 @@ public class Malla {
         return malla;
     }
 
+    public EstadoMalla getEstadoFinal() {
+        return estadoFinal;
+    }
+
+    public EstadoMalla getEstadoInicial() {
+        return estadoInicial;
+    }
+
     @Override
     public String toString() {
-        return ver();
+        StringBuilder stringBuilder = new StringBuilder();
+
+        for (int i = 0; i < filas; i++) {
+            for (int u = 0; u < columnas; u++) {
+                stringBuilder.append(alphabet[malla[i][u]]);
+                stringBuilder.append(" ");
+            }
+            stringBuilder.append("\n");
+        }
+
+        return stringBuilder.toString();
     }
 }
