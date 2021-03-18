@@ -14,7 +14,13 @@ public class EstadoMalla implements Estado {
     int fila;
     int columna;
 
-    static int[][] matrizObstaculos;
+    final int[][] matrizObstaculos;
+
+    public EstadoMalla(int fila, int columna, int[][] matrizObstaculos) {
+        this.fila = fila;
+        this.columna = columna;
+        this.matrizObstaculos = matrizObstaculos;
+    }
 
     @Override
     public boolean equals(Object o) {
