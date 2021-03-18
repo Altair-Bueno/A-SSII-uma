@@ -43,15 +43,18 @@ public class EstadoMalla implements Estado {
            if(m[this.fila][this.columna+1] == 0){ //¿Está libre?
                sucs.add(new EstadoMalla(this.fila,this.columna+1,malla));
            }
-        } else if(this.columna - 1 >= 0){ //Vecino izquierdo
+        }
+        if(this.columna - 1 >= 0){ //Vecino izquierdo
             if(m[this.fila][this.columna+1] == 0){ //¿Está libre?
                 sucs.add(new EstadoMalla(this.fila,this.columna-1,malla));
             }
-        } else if(this.fila+1 < malla.getFilas() ){ //Hacia arriba
+        }
+        if(this.fila+1 < malla.getFilas() ){ //Hacia arriba
             if(m[this.fila][this.columna+1] == 0){ //¿Está libre?
                 sucs.add(new EstadoMalla(this.fila+1,this.columna,malla));
             }
-        } else if(this.fila-1 >= 0){
+        }
+        if(this.fila-1 >= 0){
             if(m[this.fila][this.columna+1] == 0){ //¿Está libre?
                 sucs.add(new EstadoMalla(this.fila-1,this.columna,malla));
             }
