@@ -14,7 +14,7 @@ public class EstadoMalla implements Estado {
     private final int fila;
     private final int columna;
 
-    private Malla malla;
+    private final Malla malla;
 
     public EstadoMalla(int fila, int columna, Malla malla) {
         this.fila = fila;
