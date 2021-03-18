@@ -6,7 +6,7 @@ import java.util.Objects;
 
 /**
  *
- * empty;
+ * Utilizado para representar el espacio de estados de una malla 4-vecinos
  *
  */
 

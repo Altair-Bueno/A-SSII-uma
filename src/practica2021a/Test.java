@@ -2,11 +2,14 @@ package practica2021a;
 
 public class Test {
     public static void main(String[] args) {
-        Malla malla = new Malla(2,5,7,10);
+        Malla malla = new Malla(1,5,5,4);
+
         System.out.println(malla);
 
-        Malla malla2 = new Malla(2,5,7,10);
-        System.out.println(malla2);
-        // Son iguales?
+        System.out.println("Inicial: " +malla.getEstadoInicial());
+        System.out.println("Final: " +malla.getEstadoFinal());
+
+        System.out.println("Sucesores de inicial: " + malla.getEstadoInicial().calculaSucesores());
+        System.out.println("Heuristico: " + malla.getEstadoInicial().h(malla.getEstadoFinal()));
     }
 }
