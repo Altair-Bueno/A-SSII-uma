@@ -38,7 +38,9 @@ public class EstadoMalla implements Estado {
     @Override
     public List<? extends Estado> calculaSucesores() {
         List<? extends Estado> sucs = new ArrayList<>();
+        if(this.fila + 1 > 3){
 
+        }
     }
 
     @Override
