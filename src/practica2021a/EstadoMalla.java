@@ -37,10 +37,26 @@ public class EstadoMalla implements Estado {
 
     @Override
     public List<? extends Estado> calculaSucesores() {
-        List<? extends Estado> sucs = new ArrayList<>();
-        if( + 1 < matrizObstaculos[0].length){ //Vecino derecho
-
+        List<EstadoMalla> sucs = new ArrayList<>();
+        int[][] m = malla.getMalla();
+        if(this.columna + 1 < malla.getColumnas()){ //Vecino derecho
+           if(m[this.fila][this.columna+1] == 0){ //¿Está libre?
+               sucs.add(new EstadoMalla(this.fila,this.columna+1,malla));
+           }
+        } else if(this.columna - 1 >= 0){ //Vecino izquierdo
+            if(m[this.fila][this.columna+1] == 0){ //¿Está libre?
+                sucs.add(new EstadoMalla(this.fila,this.columna-1,malla));
+            }
+        } else if(this.fila+1 < malla.getFilas() ){ //Hacia arriba
+            if(m[this.fila][this.columna+1] == 0){ //¿Está libre?
+                sucs.add(new EstadoMalla(this.fila+1,this.columna,malla));
+            }
+        } else if(this.fila-1 >= 0){
+            if(m[this.fila][this.columna+1] == 0){ //¿Está libre?
+                sucs.add(new EstadoMalla(this.fila-1,this.columna,malla));
+            }
         }
+        return sucs;
     }
 
     @Override
