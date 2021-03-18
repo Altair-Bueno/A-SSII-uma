@@ -76,7 +76,12 @@ public class EstadoMalla implements Estado {
 
     @Override
     public void ver() {
+        System.out.println(this.toString());
+    }
 
+    @Override
+    public String toString() {
+        return "Fila: " + this.fila + ", Columna: " + this.columna;
     }
 
     public int getFila() {
