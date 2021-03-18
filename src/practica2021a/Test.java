@@ -1,3 +1,5 @@
+package practica2021a;
+
 public class Test {
     public static void main(String[] args) {
         Malla malla = new Malla(2,5,7,10);

@@ -1,3 +1,5 @@
+package practica2021a;
+
 import java.util.Random;
 
 public class Malla {
