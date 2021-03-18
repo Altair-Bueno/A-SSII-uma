@@ -37,12 +37,13 @@ public class EstadoMalla implements Estado {
 
     @Override
     public List<? extends Estado> calculaSucesores() {
-        return null;
+        List<? extends Estado> sucs = new ArrayList<>();
+
     }
 
     @Override
     public int coste(Estado e2) {
-        return 0;
+        return 1;
     }
 
     @Override
