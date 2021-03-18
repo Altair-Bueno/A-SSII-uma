@@ -50,6 +50,14 @@ public class Malla {
         generarMalla();
     }
 
+    public int getColumnas() {
+        return columnas;
+    }
+
+    public int getFilas(){
+        return filas;
+    }
+
     /**
      * Genera la malla a partir de los datos especificados. El inicio y el
      * final se generan de manera aleatoria lo primero, y luego se generan
