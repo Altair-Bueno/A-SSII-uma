@@ -60,7 +60,7 @@ public class EstadoMalla implements Estado {
 
         if(this.fila-1 >= 0){ //Vecino abajo
             if(m[this.fila+1][this.columna] == 0){ //¿Está libre?
-                sucs.add(new EstadoMalla(this.fila-1,this.columna,malla));
+                sucs.add(new EstadoMalla(this.fila+1,this.columna,malla));
             }
         }
 
