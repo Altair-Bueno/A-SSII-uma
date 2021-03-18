@@ -64,14 +64,14 @@ public class Malla {
         f = seed.nextInt(filas);
         c = seed.nextInt(columnas);
         malla[f][c] = START;
-        estadoInicial = new EstadoMalla(f,c,malla);
+        estadoInicial = new EstadoMalla(f,c,this);
 
         while(malla[f][c] != EMPTY){
             f = seed.nextInt(filas);
             c = seed.nextInt(columnas);
         }
         malla[f][c] = END;
-        estadoFinal = new EstadoMalla(f,c,malla);
+        estadoFinal = new EstadoMalla(f,c,this);
 
 
         while (n > 0){
