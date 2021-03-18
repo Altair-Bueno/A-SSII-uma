@@ -112,6 +112,14 @@ public class Malla {
         return malla;
     }
 
+    public EstadoMalla getEstadoFinal() {
+        return estadoFinal;
+    }
+
+    public EstadoMalla getEstadoInicial() {
+        return estadoInicial;
+    }
+
     @Override
     public String toString() {
         return ver();
