@@ -17,6 +17,9 @@ public class Malla {
     private final int[][] malla;
     private final Random seed;
 
+    private EstadoMalla estadoFinal;
+    private EstadoMalla estadoInicial;
+
     /**
      * Representa una malla 4-vecinos con obstaculos. Cada casilla contiene
      * un valor que representa el tipo de objeto {EMPTY, START, END, WALL}.
@@ -58,12 +61,14 @@ public class Malla {
         f = seed.nextInt(filas);
         c = seed.nextInt(columnas);
         malla[f][c] = START;
+        estadoInicial = new EstadoMalla(f,c,malla);
 
         while(malla[f][c] != EMPTY){
             f = seed.nextInt(filas);
             c = seed.nextInt(columnas);
         }
         malla[f][c] = END;
+        estadoFinal = new EstadoMalla(f,c,malla);
 
 
         while (n > 0){
