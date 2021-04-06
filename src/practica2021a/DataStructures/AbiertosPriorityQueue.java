@@ -2,15 +2,16 @@ package practica2021a.DataStructures;
 
 import practica2021a.Estado;
 
+import java.util.EmptyStackException;
 import java.util.PriorityQueue;
 
 public class AbiertosPriorityQueue <E extends Estado> extends Abiertos<E> {
 
-    private PriorityQueue<E> queue;
+    private PriorityQueue<NodoAB> queue;
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return queue.isEmpty();
     }
 
     @Override
@@ -20,7 +21,8 @@ public class AbiertosPriorityQueue <E extends Estado> extends Abiertos<E> {
 
     @Override
     public E poll() {
-        return null;
+        if (queue.isEmpty()) throw new EmptyStackException();
+        return queue.poll().getEstado();
     }
 
     @Override
