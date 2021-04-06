@@ -1,4 +1,7 @@
-package practica2021a;
+package practica2021a.DataStructures;
+
+import practica2021a.Abiertos;
+import practica2021a.Estado;
 
 public class AbiertosPriorityQueue <E extends Estado> extends Abiertos<E> {
 

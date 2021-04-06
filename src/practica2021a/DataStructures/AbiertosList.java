@@ -1,6 +1,9 @@
-package practica2021a;
+package practica2021a.DataStructures;
 
-public class AbiertosList <E extends Estado> extends Abiertos<E>{
+import practica2021a.Abiertos;
+import practica2021a.Estado;
+
+public class AbiertosList <E extends Estado> extends Abiertos<E> {
     @Override
     public boolean isEmpty() {
         return false;
