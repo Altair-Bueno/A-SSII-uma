@@ -32,7 +32,6 @@ public class AbiertosPriorityQueue <E extends Estado> extends Abiertos<E> {
 
     @Override
     public void remove(Estado estado) {
-        if(queue.isEmpty()) throw new EmptyStackException();
         Iterator<NodoAB> iterator = queue.iterator();
         NodoAB node = null;
         while (node == null && iterator.hasNext()) {
