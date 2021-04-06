@@ -56,6 +56,10 @@ public abstract class Abiertos<E extends Estado> {
 				return false;
 			return true;
 		}
+		@Override
+		public String toString() {
+			return estado.toString();
+		}
 	}
 	/////////////////////////////////////////////////////////////////////////////////
 

@@ -2,6 +2,8 @@ package practica2021a.DataStructures;
 
 import practica2021a.Estado;
 
+import java.util.ArrayList;
+import java.util.EmptyStackException;
 import java.util.List;
 
 public class AbiertosList <E extends Estado> extends Abiertos<E> {
@@ -10,7 +12,7 @@ public class AbiertosList <E extends Estado> extends Abiertos<E> {
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return list.isEmpty();
     }
 
     @Override
@@ -20,7 +22,16 @@ public class AbiertosList <E extends Estado> extends Abiertos<E> {
 
     @Override
     public E poll() {
-        return null;
+        if (list.isEmpty()) throw new EmptyStackException();
+        E elem = list.get(0).getEstado();
+        list.remove(0);
+
+        List<NodoAB> list2 = new ArrayList<>(list.size());
+        for (int i = 1 ; i<list.size(); i++) {
+            list2.add(list.get(i));
+        }
+        list = list2;
+        return elem;
     }
 
     @Override
@@ -30,11 +41,16 @@ public class AbiertosList <E extends Estado> extends Abiertos<E> {
 
     @Override
     public int size() {
-        return 0;
+        return list.size();
     }
 
     @Override
     public void ver() {
+        System.out.println(this.toString());
+    }
 
+    @Override
+    public String toString() {
+        return list.toString();
     }
 }
