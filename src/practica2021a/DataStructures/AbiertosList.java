@@ -2,7 +2,12 @@ package practica2021a.DataStructures;
 
 import practica2021a.Estado;
 
+import java.util.List;
+
 public class AbiertosList <E extends Estado> extends Abiertos<E> {
+
+    private List<E> list;
+
     @Override
     public boolean isEmpty() {
         return false;
