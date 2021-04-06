@@ -28,7 +28,6 @@ public class AbiertosList<E extends Estado> extends Abiertos<E> {
             if(list.get(0).compareTo(nodo) > 0){
                 NodoAB temp = list.get(0);
                 list.add(0, nodo);
-                list.add(temp);
             }else{
                 list.add(nodo);
             }
@@ -40,10 +39,7 @@ public class AbiertosList<E extends Estado> extends Abiertos<E> {
             if(i == list.size()-1){
                 list.add(nodo);
             }else{
-                for(int cont = list.size(); cont >= i; i--){
-                    list.add(cont, list.get(cont-1));
-                }
-                list.add(i-1, nodo);
+                list.add(i, nodo);
             }
         }
     }
@@ -68,11 +64,8 @@ public class AbiertosList<E extends Estado> extends Abiertos<E> {
         while(i < list.size() && !list.get(i).getEstado().equals(e)){
             i++;
         }
-        if(i != list.size() - 1){
+        if(i < list.size() - 1){
             list.remove(i);
-            for(int j = i; j < list.size()-1; j++){
-                list.add(j, list.get(j+1));
-            }
         }
     }
 
