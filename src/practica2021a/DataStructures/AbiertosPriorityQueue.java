@@ -3,7 +3,6 @@ package practica2021a.DataStructures;
 import practica2021a.Estado;
 
 import java.util.EmptyStackException;
-import java.util.Iterator;
 import java.util.PriorityQueue;
 
 public class AbiertosPriorityQueue <E extends Estado> extends Abiertos<E> {
