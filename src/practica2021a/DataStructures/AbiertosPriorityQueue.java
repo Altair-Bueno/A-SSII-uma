@@ -3,6 +3,7 @@ package practica2021a.DataStructures;
 import practica2021a.Estado;
 
 import java.util.EmptyStackException;
+import java.util.Iterator;
 import java.util.PriorityQueue;
 
 public class AbiertosPriorityQueue <E extends Estado> extends Abiertos<E> {
@@ -32,7 +33,13 @@ public class AbiertosPriorityQueue <E extends Estado> extends Abiertos<E> {
     @Override
     public void remove(Estado estado) {
         if(queue.isEmpty()) throw new EmptyStackException();
-        queue.remove(estado);
+        Iterator<NodoAB> iterator = queue.iterator();
+        NodoAB node = null;
+        while (node == null && iterator.hasNext()) {
+            NodoAB temp = iterator.next();
+            if (temp.getEstado().equals(estado)) node = temp;
+        }
+        queue.remove(node);
     }
 
     @Override
