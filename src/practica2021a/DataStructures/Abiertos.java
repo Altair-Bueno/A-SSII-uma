@@ -1,6 +1,6 @@
-package practica2021a;
+package practica2021a.DataStructures;
 
-import java.util.List;
+import practica2021a.Estado;
 
 public abstract class Abiertos<E extends Estado> {
 
