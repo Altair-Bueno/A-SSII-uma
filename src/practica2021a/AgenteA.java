@@ -1,5 +1,7 @@
 package practica2021a;
 
+import practica2021a.DataStructures.*;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,11 +20,11 @@ public class AgenteA{
 	 * Resuelve un problema dado el estado inicial y el objetivo.
 	 * 
 	 */
-	/*
+
 	public List<Estado> resuelve(Estado salida, Estado objetivo){
 
-		Arbol<Estado> arbol = new ArbolL<Estado>();
-		Abiertos<Estado> abiertos = new AbiertosL<Estado>();
+		Arbol<Estado> arbol = new ArbolHashMap<>();
+		Abiertos<Estado> abiertos = new AbiertosList<>();
 
 		Estado e = salida;
 		Nodo n = new Nodo(e, 0, null);
@@ -75,6 +77,4 @@ public class AgenteA{
 		return solucion;
 
 	}
-
-	 */
 }
