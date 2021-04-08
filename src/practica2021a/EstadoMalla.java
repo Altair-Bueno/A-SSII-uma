@@ -38,7 +38,7 @@ public class EstadoMalla implements Estado {
     @Override
     public List<? extends Estado> calculaSucesores() {
         List<EstadoMalla> sucs = new ArrayList<>();
-        int[][] m = malla.getMalla();
+        char[][] m = malla.getMalla();
 
         if(this.columna - 1 >= 0){ //Vecino izquierdo
             if(m[this.fila][this.columna-1] != Malla.WALL){

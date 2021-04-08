@@ -1,5 +1,6 @@
 package practica2021a;
 
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -11,18 +12,16 @@ import java.util.Random;
 
 public class Malla {
 
-    public final static int EMPTY = 0;
-    public final static int START = 1;
-    public final static int END = 2;
-    public final static int WALL = 3;
-    private final static char[] alphabet = {'_', 'S', 'E', 'X'};
-
+    public final static char EMPTY = '_';
+    public final static char START = 'S';
+    public final static char END = 'E';
+    public final static char WALL = 'X';
 
 
     private final int obs;
     private final int filas;
     private final int columnas;
-    private final int[][] malla;
+    private final char[][] malla;
     private final Random seed;
 
     private EstadoMalla estadoFinal;
@@ -50,7 +49,12 @@ public class Malla {
 
         seed = new Random();
         seed.setSeed(s);
-        malla = new int[f][c];
+        malla = new char[f][c];
+        for (int i = 0; i<f; i++) {
+            for (int j = 0; j<c;j++) {
+                malla[i][j] = EMPTY;
+            }
+        }
         obs = nObstaculos;
         filas = f;
         columnas = c;
@@ -115,7 +119,7 @@ public class Malla {
         System.out.println(toString());
     }
 
-    public int[][] getMalla() {
+    public char[][] getMalla() {
         return malla;
     }
 
@@ -145,7 +149,7 @@ public class Malla {
 
         for (int i = 0; i < filas; i++) {
             for (int u = 0; u < columnas; u++) {
-                stringBuilder.append(alphabet[malla[i][u]]);
+                stringBuilder.append(malla[i][u]);
                 stringBuilder.append(" ");
             }
             stringBuilder.append("\n");
