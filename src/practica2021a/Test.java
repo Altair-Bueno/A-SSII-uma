@@ -1,15 +1,13 @@
 package practica2021a;
 
+import java.util.List;
+
 public class Test {
     public static void main(String[] args) {
-        Malla malla = new Malla(7,5,5,4);
-
+        AgenteA agenteA = new AgenteA();
+        Malla malla = new Malla(1,4,4,3);
         System.out.println(malla);
-
-        System.out.println("Inicial: " +malla.getEstadoInicial());
-        System.out.println("Final: " +malla.getEstadoFinal());
-
-        System.out.println("Sucesores de inicial: " + malla.getEstadoInicial().calculaSucesores());
-        System.out.println("Heuristico: " + malla.getEstadoInicial().h(malla.getEstadoFinal()));
+        List<Estado> sol= agenteA.resuelve(malla.getEstadoInicial(),malla.getEstadoFinal());
+        System.out.println(sol);
     }
 }

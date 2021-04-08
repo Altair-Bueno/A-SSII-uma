@@ -27,7 +27,7 @@ public class AgenteA{
 		Abiertos<Estado> abiertos = new AbiertosList<>();
 
 		Estado e = salida;
-		Nodo n = new Nodo(e, 0, null);
+		Nodo<Estado> n = new Nodo<>(e, 0, null);
 		arbol.put(n);
 		abiertos.offer(e.h(objetivo), e);
 		
@@ -43,10 +43,10 @@ public class AgenteA{
 					int nuevoCoste = ge + e.coste(e2);
 					
 					if (!arbol.containsKey(e2)){	//nuevon nodo: simplemente a�adimos e2 al �rboly a abiertos
-						arbol.put(new Nodo(e2, nuevoCoste, n));
+						arbol.put(new Nodo<>(e2, nuevoCoste, n));
 						abiertos.offer(nuevoCoste + e2.h(objetivo),  e2);
 					} else {
-						Nodo n2 = arbol.get(e2);
+						Nodo<Estado> n2 = arbol.get(e2);
 						int antiguoCoste = n2.getG();
 						if (nuevoCoste < antiguoCoste) { // mejor camino: redirigimos el puntero de e2 y actualizamos abiertos
 							n2.setPadre(n);
@@ -64,10 +64,10 @@ public class AgenteA{
 		return null;		 //la b�squeda termina con fracaso
 	}
 	
-	ArrayList<Estado> recuperaSolucion(Nodo n, Arbol<Estado> arbol){
+	ArrayList<Estado> recuperaSolucion(Nodo<Estado> n, Arbol<Estado> arbol){
 		ArrayList<Estado> solucion = new ArrayList<Estado>();
 		
-		Nodo n2 = n;
+		Nodo<Estado> n2 = n;
 		
 		while(n2  != null){
 			solucion.add(n2.getEstado());
