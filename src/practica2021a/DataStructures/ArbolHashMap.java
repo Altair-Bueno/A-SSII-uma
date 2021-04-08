@@ -22,7 +22,7 @@ public class ArbolHashMap<E extends Estado> extends Arbol<E>{
     }
 
     @Override
-    public Nodo get(Estado estado) {
+    public Nodo<E> get(Estado estado) {
         return arbol.get(estado);
     }
 

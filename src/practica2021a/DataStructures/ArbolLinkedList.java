@@ -14,7 +14,7 @@ public class ArbolLinkedList<E extends Estado> extends Arbol<E> {
     }
 
     @Override
-    public void put(Nodo nodo) {
+    public void put(Nodo<E> nodo) {
         linkedList.add(nodo);
     }
 
@@ -24,10 +24,8 @@ public class ArbolLinkedList<E extends Estado> extends Arbol<E> {
     }
 
     @Override
-    public Nodo get(Estado estado) {
-        Iterator<Nodo<E>> iterator = linkedList.iterator();
-        while (iterator.hasNext()) {
-            Nodo<E> temp = iterator.next();
+    public Nodo<E> get(Estado estado) {
+        for (Nodo<E> temp : linkedList) {
             if (temp.getEstado().equals(estado)) return temp;
         }
         return null;
