@@ -8,8 +8,8 @@ import practica2021a.Estado;
  * @author Lawrence Mandow
  * @date   2021-03-08
  * 
- * Nodo del �rbol de b�squeda.
- * Se compone del estado, valor g, y el puntero a su nodo padre (null si es la ra�z).
+ * Nodo del árbol de búsqueda.
+ * Se compone del estado, valor g, y el puntero a su nodo padre (null si es la raíz).
  *
  */
 public class Nodo<E extends Estado>{
