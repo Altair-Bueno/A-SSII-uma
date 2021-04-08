@@ -61,7 +61,7 @@ public class AgenteA{
 			}//if-else
 		}//while
 		
-		return null;		 //la b�squeda termina con fracaso
+		return null;		 //la búsqueda termina con fracaso
 	}
 	
 	ArrayList<Estado> recuperaSolucion(Nodo<Estado> n, Arbol<Estado> arbol){
