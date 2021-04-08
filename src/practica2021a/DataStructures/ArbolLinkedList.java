@@ -2,12 +2,14 @@ package practica2021a.DataStructures;
 
 import practica2021a.Estado;
 
-public class ArbolLinkedList extends Arbol {
+import java.util.LinkedList;
 
-    private Nodo<Estado> root;
+public class ArbolLinkedList<E extends Estado> extends Arbol<E> {
+
+    private LinkedList<Nodo<E>> linkedList;
 
     public ArbolLinkedList(){
-        root = null;
+        linkedList = new LinkedList<>();
     }
 
     @Override
