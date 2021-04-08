@@ -20,7 +20,7 @@ public class ArbolLinkedList<E extends Estado> extends Arbol<E> {
 
     @Override
     public boolean containsKey(Estado estado) {
-        return false;
+        return get(estado)!= null;
     }
 
     @Override
