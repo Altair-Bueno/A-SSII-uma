@@ -49,12 +49,6 @@ public class AbiertosList<E extends Estado> extends Abiertos<E> {
         if (list.isEmpty()) throw new EmptyStackException();
         E elem = list.get(0).getEstado();
         list.remove(0);
-
-        List<NodoAB> list2 = new ArrayList<>(list.size());
-        for (int i = 1; i < list.size(); i++) {
-            list2.add(list.get(i));
-        }
-        list = list2;
         return elem;
     }
 
