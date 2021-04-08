@@ -14,7 +14,7 @@ public class ArbolLinkedList<E extends Estado> extends Arbol<E> {
 
     @Override
     public void put(Nodo nodo) {
-
+        linkedList.add(nodo);
     }
 
     @Override
