@@ -42,7 +42,8 @@ public class Nodo<E extends Estado>{
 	public void setG(int g) {
 		this.g = g;
 	}
-	
+
+	@Override
 	public String toString() {
 		return  e.toString() + " (" + this.g + ") ";
 	}
