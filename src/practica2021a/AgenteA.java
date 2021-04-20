@@ -23,7 +23,7 @@ public class AgenteA{
 
 	public List<Estado> resuelve(Estado salida, Estado objetivo){
 
-		Arbol<Estado> arbol = new ArbolHashMap<>();
+		Arbol<Estado> arbol = new ArbolLinkedList<>();
 		Abiertos<Estado> abiertos = new AbiertosList<>();
 
 		Estado e = salida;
